@@ -1,9 +1,9 @@
 import type { PluginOption } from 'vite';
 
-function honoFilebaseRoutingHelperVitePlugin(): PluginOption[] {
+function filebasedHonoVitePlugin(): PluginOption[] {
   return [
     {
-      name: 'hono-filebased-routing-helper-vite-plugin',
+      name: 'filebased-hono-vite-plugin',
       configureServer(server) {
         server.watcher.add('./src/routes/**');
         server.watcher.on('add', async () => {
@@ -13,8 +13,15 @@ function honoFilebaseRoutingHelperVitePlugin(): PluginOption[] {
           await server.restart();
         });
       },
+      config: () => {
+        return {
+          ssr: {
+            noExternal: ['filebased-hono', 'filebased-hono/*'],
+          },
+        };
+      },
     },
   ];
 }
 
-export default honoFilebaseRoutingHelperVitePlugin;
+export default filebasedHonoVitePlugin;
