@@ -3,7 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun run -F '*' --elide-lines 0 dev"
+    "dev": "bun run -F '*' --elide-lines 0 dev",
+    "build": "bun run -F 'filebased-hono' build && bun run -F '@filebased-hono/example-basic' build"
   },
   "workspaces": [
     "packages/*",
@@ -16,10 +17,11 @@
     "vite": "^7.3.0"
   },
   "devDependencies": {
-    "@typescript/native-preview": "^7.0.0-dev.20260103.1",
     "@types/node": "^25.0.3",
+    "@typescript/native-preview": "^7.0.0-dev.20260103.1",
     "oxfmt": "^0.21.0",
     "oxlint": "^1.36.0",
-    "oxlint-tsgolint": "^0.10.1"
+    "oxlint-tsgolint": "^0.10.1",
+    "wrangler": "^4.54.0"
   }
 }

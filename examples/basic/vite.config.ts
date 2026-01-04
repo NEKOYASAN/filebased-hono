@@ -9,13 +9,15 @@ export default defineConfig({
     devServer({
       adapter: () =>
         cloudflareAdapter({
-          proxy: {},
+          proxy: {
+            configPath: '../../wrangler.jsonc',
+          },
         }),
       entry: 'src/index.ts',
     }),
     build({
       entry: './src/index.ts',
-      outputDir: './dist',
+      outputDir: '../../dist',
     }),
     filebasedHonoVitePlugin(),
   ],
