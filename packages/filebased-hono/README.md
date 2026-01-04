@@ -109,3 +109,10 @@ cd examples/basic
 bun install
 bun run dev
 ```
+
+### Note
+
+This helper strongly inspired by honox. In many cases, honox would be a better choice.
+Also, this helper is under development. We welcome feature requests, but we have no plans to implement rendering or support for island architecture in order to differentiate it from honox.
+
+<https://github.com/honojs/honox>
