@@ -1,0 +1,52 @@
+{
+  "name": "filebased-hono",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "hono": "^4.11.3",
+    "tsup": "^8.5.1",
+    "vite": "^7.3.0"
+  },
+  "peerDependencies": {
+    "hono": ">=4.*",
+    "vite": ">=7.*"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./factory": {
+      "import": "./dist/factory.js",
+      "types": "./dist/factory.d.ts"
+    },
+    "./vite": {
+      "import": "./dist/vite.js",
+      "types": "./dist/vite.d.ts"
+    }
+  },
+  "author": {
+    "name": "nekoyasan",
+    "email": "hello@nekoyasan.me",
+    "url": "https://nekoyasan.me/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NEKOYASAN/filebased-hono.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  }
+}

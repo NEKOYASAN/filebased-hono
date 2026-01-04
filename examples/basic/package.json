@@ -1,0 +1,25 @@
+{
+  "name": "basic",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "bun run build && vite preview",
+    "deploy": "bun run build && wrangler deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@hono/standard-validator": "^0.2.1",
+    "@scalar/hono-api-reference": "^0.9.30",
+    "filebased-hono": "workspace:^",
+    "hono": "^4.11.3",
+    "hono-openapi": "^1.1.2",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@hono/vite-build": "^1.8.0",
+    "@hono/vite-dev-server": "^0.24.0",
+    "vite": "^7.3.0",
+    "wrangler": "^4.17.0"
+  }
+}

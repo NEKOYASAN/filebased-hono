@@ -1,0 +1,25 @@
+{
+  "name": "@filebased-hono/root",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run -F '*' --elide-lines 0 dev"
+  },
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "vite": "^7.3.0"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260103.1",
+    "@types/node": "^25.0.3",
+    "oxfmt": "^0.21.0",
+    "oxlint": "^1.36.0",
+    "oxlint-tsgolint": "^0.10.1"
+  }
+}

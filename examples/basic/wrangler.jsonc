@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "filebased-hono-example",
+  "compatibility_date": "2025-12-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "dist/index.js",
+  "no_bundle": true,
+  "workers_dev": true
+}
