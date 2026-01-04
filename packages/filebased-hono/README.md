@@ -74,6 +74,24 @@ export default createRoute(
 );
 ```
 
+### Customizing the Env type
+
+Augment the `filebased-hono/factory` module to describe your own `Env`. Once declared, helpers such as `createRoute`, `createHono`, or any `Context` imported from `filebased-hono/factory` will reflect your bindings and variables.
+
+```ts
+// env.d.ts (or any file included by TypeScript)
+declare module 'filebased-hono/factory' {
+  export interface Env {
+    Variables: {
+      CUSTOM_VARIABLE: string;
+    };
+    Bindings: {};
+  }
+}
+```
+
+Now, within a route handler you can access `c.env.get("CUSTOM_VARIABLE")` with proper type inference.
+
 ### Dynamic, catch-all, and helper directories
 
 - `[slug]` folders map to required parameters (e.g. `todos/[todoId]/get.ts` → `/todos/:todoId`).
