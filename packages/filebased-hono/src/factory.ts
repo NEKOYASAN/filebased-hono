@@ -1,5 +1,7 @@
-import { Env } from 'hono';
+import { Env as HonoEnv } from 'hono';
 import { createFactory } from 'hono/factory';
+
+export interface Env extends HonoEnv {}
 
 const factory = createFactory<Env>();
 
